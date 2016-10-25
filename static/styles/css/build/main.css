@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+body {
+  font-family: 'Josefin Sans', 'Sans Serif' !important;
+  background: #def;
+  margin: 0;
+}
+
+body header {
+  -webkit-box-shadow: 0 0 10px -2px black;
+     -moz-box-shadow: 0 0 10px -2px black;
+          box-shadow: 0 0 10px -2px black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 30px;
+  width: 100%;
+  font-weight: bold;
+  color: #eee;
+  background: #1990ea;
+  background-image: -webkit-gradient(linear, left top, right top, from(rbga()));
+  background-image: -webkit-linear-gradient(left, rbga());
+  background-image: -moz-linear-gradient(left, rbga());
+  background-image: -o-linear-gradient(left, rbga());
+  background-image: linear-gradient(to right, rbga());
+}
+
+body header figure, body header nav {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+
+body header nav span {
+  margin-right: 12px;
+}
+
+body header nav span a {
+  text-decoration: none;
+}
+
+body header nav span a:hover, body header nav span a:active, body header nav span a:link, body header nav span a:visited {
+  color: #eee;
+}
+
+body main {
+  margin: 8% 0 0 0;
+}
+
+body main .main-view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+body main .main-view .polls-results {
+  margin-top: 5%;
+  width: 90%;
+}
+
+body main .main-view .polls-results .polls-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body main .main-view .polls-results .polls-list .poll-item {
+  height: 46px;
+  border: 1px solid #bbb;
+  background: #cfe0e9;
+}
+
+body main .main-view .polls-results .polls-list .poll-item:hover {
+  -webkit-backface-visibility: hidden;
+     -moz-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.02);
+     -moz-transform: translateZ(0) scale(1.02);
+          transform: translateZ(0) scale(1.02);
+  -webkit-transition: -webkit-transform 0.2s linear;
+     -moz-transition: -moz-transform 0.2s linear;
+       -o-transition: -o-transform 0.2s linear;
+          transition: transform 0.2s linear;
+}
+
+body main .main-view .polls-results .polls-list .poll-item:first-child {
+  -webkit-border-top-left-radius: 4px;
+     -moz-border-radius-topleft: 4px;
+          border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+     -moz-border-radius-topright: 4px;
+          border-top-right-radius: 4px;
+}
+
+body main .main-view .polls-results .polls-list .poll-item:last-child {
+  -webkit-border-bottom-left-radius: 4px;
+     -moz-border-radius-bottomleft: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+     -moz-border-radius-bottomright: 4px;
+          border-bottom-right-radius: 4px;
+}
+
+body main .main-view .polls-results .polls-list .poll-item a {
+  text-decoration: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .main-view .polls-results .polls-list .poll-item a:hover, body main .main-view .polls-results .polls-list .poll-item a:active, body main .main-view .polls-results .polls-list .poll-item a:link, body main .main-view .polls-results .polls-list .poll-item a:visited {
+  color: #555;
+}
+
+body main .main-view .polls-results .polls-list .poll-item a .total-votes, body main .main-view .polls-results .polls-list .poll-item a .poll-number {
+  width: 15%;
+}
+
+body main .main-view .polls-results .polls-list .poll-item a .poll-name {
+  width: 60%;
+}
+
+body main .main-view .polls-results .polls-list .poll-item a div {
+  text-align: center;
+}
+
+body main .main-view .form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  background: #cfe0e9;
+  height: 240px;
+  border: 1px solid #bbb;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  width: 380px;
+}
+
+body main .main-view .form h2 {
+  margin-bottom: -10px;
+}
+
+body main .main-view .form .credentials {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
+body main .main-view .form .credentials.login {
+  height: 60px;
+}
+
+body main .main-view .form .credentials.signup {
+  height: 90px;
+}
+
+body main .main-view .form .submits {
+  margin: -22px 0 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body main .main-view .form .submits input {
+  height: 30px;
+  width: 80px;
+  border: none;
+  background: #aaa;
+}
+
+body main .main-view .form .submits input:focus {
+  outline: none;
+}
+
+body main .main-view .form [placeholder] {
+  text-align: center;
+}

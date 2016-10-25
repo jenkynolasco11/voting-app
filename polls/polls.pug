@@ -1,0 +1,14 @@
+- var stuff = [['world',1],['items',10],['interests',7],['other stuf',21],['etc',41]]
+section.poll-intro
+  h2 The Voting App
+  p
+    | Create your own polls
+    | Or vote for the ones already created
+section.polls-results
+  ul.polls-list
+    each word, i in stuff
+      li.poll-item
+        a(href='#/poll')
+          .poll-number Poll # #{i + 1}
+          .poll-name #{word[0]}
+          .total-votes Votes: #{word[1]}

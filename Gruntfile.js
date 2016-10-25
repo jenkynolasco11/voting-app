@@ -7,20 +7,20 @@ module.exports = function(grunt) {
     // Project configuration.
 
     grunt.initConfig({
-        pug : {
-    			compile  : {
-    				files : [{
-    					expand : true,
-    					cwd : 'views',
-    					src : ['*.pug'],
-    					dest : 'views/html',
-    					ext : '.html',
-    				}],
-    				options : {
-    					pretty : true,
-    				},
-    			},
-    		},
+        // pug : {
+    		// 	compile  : {
+    		// 		files : [{
+    		// 			expand : true,
+    		// 			cwd : 'views',
+    		// 			src : ['*.pug'],
+    		// 			dest : 'views/html',
+    		// 			ext : '.html',
+    		// 		}],
+    		// 		options : {
+    		// 			pretty : true,
+    		// 		},
+    		// 	},
+    		// },
         sass : {
         	scss : {
         		files : [{
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                     ext : '.css',
                 }],
                 options : {
-                    browsers : ['ie 10','opera 39', 'firefox 49', 'safari 10'],
+                    browsers : ['ie > 9','opera > 2%', 'ff > 2%', 'safari > 2%'],
                     // cascade : false,
                 },
             },
@@ -64,10 +64,10 @@ module.exports = function(grunt) {
                 files : ['./static/styles/css/*.css'],
                 tasks : ['autoprefixer:css'],
             },
-            pug : {
-            	files : ['views/*.pug'],
-            	tasks : ['pug:compile'],
-            },
+            // pug : {
+            // 	files : ['views/*.pug'],
+            // 	tasks : ['pug:compile'],
+            // },
             // connect : {
             //     files : [
             //         __dirname + '/views/*.pug',
@@ -95,11 +95,11 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
 
     // grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-pug');
+    // grunt.loadNpmTasks('grunt-contrib-pug');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-sass');
 
   // Default task(s)
-    grunt.registerTask('default', ['pug','sass','autoprefixer',/*'connect',*/'watch']);
+    grunt.registerTask('default', [/*'pug',*/'sass','autoprefixer',/*'connect',*/'watch']);
 };

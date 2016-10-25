@@ -1,11 +1,26 @@
 doctype html
 html
   head
+    base(href='/')
     title Voting App
     script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular.js' charset='utf-8')
-    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-route.js' charset='utf-8')
-  body
-    p
-      h2 Hello World
-      blockquote
-        h4 This is a template
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-route.js' charset='utf-8')
+    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.4/angular-animate.min.js' charset='utf-8')
+    script(src='/static/js/ngRouting.js' charset='utf-8')
+    link(href='/static/styles/css/main.css' rel='stylesheet')
+  body(ng-app='voting-app')
+    header
+      figure
+        a(href='#/')
+          img(alt='Voting app logo' src='')
+      nav.link-nav
+        span
+          a(href='#/auth/login') Log In
+        span
+          a(href='#/auth/signup') Sign Up
+    main
+      section(ng-view).main-view
+    footer
+    script(src='/auth/authController.js' rel='javascript')
+    script(src='/polls/pollsController.js' rel='javascript')
+    script(src='/static/js/ngApp.js' rel='javascript')
