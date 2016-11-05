@@ -23,7 +23,8 @@ polls/:user/:poll/ -> User's poll
 polls/add/:user/:poll/ -> User's poll
 polls/delete/:user/:poll -> deletes poll
 
-auth/:user/:password -> Log in
+auth/signup/:user/:password/:email
+auth/login/:user/:password -> Log in
 auth/login -> Log in
 auth/signin -> Sign in
 auth/logout -> Log out
