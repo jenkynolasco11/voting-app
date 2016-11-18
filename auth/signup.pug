@@ -1,9 +1,10 @@
-form.form
+form(ng-submit='register()').form
   h2 Sign up
   .credentials.signup
-    input(name='username' type='text' placeholder='Username' required)
-    input(name='email' type='email' placeholder='Email' required)
-    input(name='password' type='password' placeholder='Password' required)
+    p.text-warning {{ error_message }}
+    input(name='username' ng-model='user.username' type='text' placeholder='Username' required)
+    input(name='email' ng-model='user.email' type='email' placeholder='Email' required)
+    input(name='password' ng-model='user.password' type='password' placeholder='Password' required)
   .submits
-    input(type='submit' value='Login')
+    input(type='submit' value='Sign Up')
     input(type='button' value='Cancel')

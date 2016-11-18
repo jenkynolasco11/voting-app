@@ -1,8 +1,9 @@
-form.form
+form(ng-submit='login()').form
   h2 Login
   .credentials.login
-    input(name='email' type='email' placeholder='JohnDoe14' required)
-    input(name='password' type='password' placeholder='Password' required)
+    p.text-warning {{ error_message }}
+    input(name='username' ng-model='user.username' type='text' placeholder='JohnDoe14' required)
+    input(name='password' ng-model='user.password' type='password' placeholder='Password' required)
   .submits
     input(type='submit' value='Login')
     input(type='button' value='Cancel' )

@@ -3,22 +3,21 @@ var app = angular.module('routingModule',['ngRoute']);
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
   .when('/', {
-    templateUrl : '/views/polls'
+    templateUrl : '/views/polls',
+    controller : 'pollsController'
   })
-  .when('/auth/login', {
-     templateUrl : '/views/login',
-     controller : 'authController'
+  .when('/poll', {
+    templateUrl : '/views/poll',
+    controller : 'pollsController'
   })
   .when('/auth/signup', {
     templateUrl : '/views/signup',
     controller : 'authController'
   })
-  .when('/poll/:poll', {
-    templateUrl : '/views/poll',
-    controller : 'pollsController'
-
+  .when('/auth/login', {
+     templateUrl : '/views/login',
+     controller : 'authController'
   });
-
   // $locationProvider.html5Mode(true);
 });
 

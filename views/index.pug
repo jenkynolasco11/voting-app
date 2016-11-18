@@ -13,11 +13,17 @@ html
       figure
         a(href='#/')
           img(alt='Voting app logo' src='')
-      nav.link-nav
+      nav(ng-hide='authenticated').link-nav
         span
           a(href='#/auth/login') Log In
         span
           a(href='#/auth/signup') Sign Up
+      nav(ng-show='authenticated').link-nav
+        span
+          | Welcome, {{user}}
+        span
+          a(href='#' ng-click='signout()')
+            | Sign out
     main
       section(ng-view).main-view
     footer

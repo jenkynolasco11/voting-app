@@ -8,10 +8,21 @@ var express = require('express');
 var session = require('express-session');
 var MongoConnect = require('connect-mongo')(session);
 var mongoose = require('mongoose');
+var autoIncrement = require('mongoose-auto-increment');
 var passport = require('passport');
 var morgan = require('morgan');
 var app = express();
-var db = mongoose.connect(process.env.MONGO_URL);
+
+mongoose.Promise = global.Promise;
+if(process.env.NODE_ENV == 'development') mongoose.set('debug', true);
+
+var db = mongoose.connect(process.env.MONGO_URL, function(err){
+  if(err) console.error('Something happened while connecting to the database.');
+  console.log('Connected to the database...');
+});
+
+autoIncrement.initialize(db);
+
 
 // NOTE: Consider using Redis for session memory storage
 // configure sessions
@@ -19,10 +30,6 @@ app.use(session({
   secret : process.env.SESSION_SECRET,
   store: new MongoConnect({ mongooseConnection : db.connection }),
 }));
-
-// // load models
-// require('./auth/userSchema');
-// require('./polls/pollSchema');
 
 // Set middlewares
 app.use(cookieparser());
@@ -49,26 +56,28 @@ var initPassport = require('./passport-init');
 initPassport(passport);
 
 // Configure view settings
-app.set('views', paths.concat('/views').map(path => '.' + path));
+app.set('views', paths.concat('views').map(path => './' + path));
 app.set('view engine', 'pug');
 
 // set routes
 app.use('/auth', auth);
-app.use('/poll', poll);
+app.use('/polls', poll);
 // Render the main view
 app.get('/', function(req, res){
   res.render('index');
 });
 
-// Handle Errors
-app.use(errors);
 
 // Views renderer
 app.get('/views/:viewpath(*)', function (req, res){
   var viewpath = req.params.viewpath;
+
   // console.log(viewpath);
   res.render(viewpath);
 });
+
+// Handle Errors
+app.use(errors);
 
 app.listen(process.env.PORT || 8080);
 console.log('Listening on port ' + (process.env.PORT || 8080) + '...');
